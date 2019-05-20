@@ -31,7 +31,7 @@ class Header extends Component {
   };
 
   render() {
-    const { title } = this.props;
+    const { title, adicionar, navigation } = this.props;
 
     return (
       <View style={styles.container}>
@@ -39,9 +39,17 @@ class Header extends Component {
 
         <View style={styles.left} />
         <Text style={styles.title}>{title}</Text>
-        <TouchableOpacity onPress={this.signOut}>
-          <Icon name="exchange" size={16} style={styles.icon} />
-        </TouchableOpacity>
+
+        <View style={styles.menu}>
+          {adicionar && (
+            <TouchableOpacity onPress={() => navigation.navigate('Projetos')}>
+              <Icon name="plus" size={20} style={styles.icon} />
+            </TouchableOpacity>
+          )}
+          <TouchableOpacity onPress={this.signOut}>
+            <Icon name="sign-out" size={20} style={styles.icon} />
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }

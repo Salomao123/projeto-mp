@@ -2,23 +2,56 @@ import {
   createAppContainer,
   createSwitchNavigator,
   createBottomTabNavigator,
+  createDrawerNavigator,
 } from 'react-navigation';
 
+import { colors } from '~/styles';
+
+// screen
 import Welcome from '~/pages/Welcome';
-import Repositories from '~/pages/Repositories';
-import Organizations from '~/pages/Organizations';
+import Operacoes from '~/pages/Operacoes';
+import Projetos from '~/pages/Projetos';
+import CadastroUsuario from '~/pages/Usuario/Cadastro';
 
 const Routes = (userLogged = false) => createAppContainer(
   createSwitchNavigator(
     {
-      Welcome,
-      User: createBottomTabNavigator({
-        Repositories,
-        Organizations,
-      }),
+      Welcome: {
+        screen: Welcome,
+      },
+      CadastroUsuario: {
+        screen: CadastroUsuario,
+      },
+      User: createBottomTabNavigator(
+        {
+          Operacoes: {
+            screen: Operacoes,
+            navigationOptions: {
+              title: 'Lista Operações',
+            },
+          },
+          Projetos: {
+            screen: Projetos,
+            navigationOptions: {
+              title: 'Projetos Internos',
+            },
+          },
+        },
+        {
+          tabBarOptions: {
+            showIcon: true,
+            showLabel: true,
+            activeTintColor: colors.white,
+            inactiveTintColor: colors.whiteTransparent,
+            style: {
+              backgroundColor: colors.secundary,
+            },
+          },
+        },
+      ),
     },
     {
-      initialRouteName: userLogged ? 'Repositories' : 'Welcome',
+      initialRouteName: userLogged ? 'User' : 'Welcome',
     },
   ),
 );

@@ -12,7 +12,7 @@ export default class App extends Component {
   };
 
   async componentDidMount() {
-    const username = await AsyncStorage.getItem('@Githuber:username');
+    const username = await AsyncStorage.getItem('@GOI:token');
 
     this.setState({
       userChacked: true,
