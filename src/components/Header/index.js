@@ -31,19 +31,32 @@ class Header extends Component {
   };
 
   render() {
-    const { title, adicionar, navigation } = this.props;
+    const {
+      title, adicionar, navigation, viewers,
+    } = this.props;
 
     return (
       <View style={styles.container}>
         <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
-        <View style={styles.left} />
+        <View style={styles.left}>
+          <TouchableOpacity onPress={() => alert('ainda nao implementado!')}>
+            <Icon name="bars" size={20} style={styles.icon} />
+          </TouchableOpacity>
+        </View>
         <Text style={styles.title}>{title}</Text>
 
         <View style={styles.menu}>
           {adicionar && (
-            <TouchableOpacity onPress={() => navigation.navigate('Projetos')}>
+            <TouchableOpacity onPress={() => navigation.navigate('CadastroOperacao')}>
               <Icon name="plus" size={20} style={styles.icon} />
+            </TouchableOpacity>
+          )}
+
+          {viewers && (
+            <TouchableOpacity style={styles.eye} onPress={() => alert('ainda nao implementado!')}>
+              <Text style={styles.title}>{viewers}</Text>
+              <Icon name="eye" size={20} style={styles.icon} />
             </TouchableOpacity>
           )}
           <TouchableOpacity onPress={this.signOut}>

@@ -49,7 +49,9 @@ export default class Repositories extends Component {
     this.setState({ data, loading: false, refreshing: false });
   };
 
-  renderListItem = ({ item }) => <OperacoesItem operacao={item} />;
+  renderListItem = ({ item }) => (
+    <OperacoesItem navigation={this.props.navigation} operacao={item} />
+  );
 
   renderList = (data) => {
     const { docs } = data;

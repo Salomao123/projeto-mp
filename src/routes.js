@@ -2,7 +2,6 @@ import {
   createAppContainer,
   createSwitchNavigator,
   createBottomTabNavigator,
-  createDrawerNavigator,
 } from 'react-navigation';
 
 import { colors } from '~/styles';
@@ -12,6 +11,8 @@ import Welcome from '~/pages/Welcome';
 import Operacoes from '~/pages/Operacoes';
 import Projetos from '~/pages/Projetos';
 import CadastroUsuario from '~/pages/Usuario/Cadastro';
+import CadastroOperacao from '~/pages/Operacoes/CadastroOperacao';
+import OperacaoDetalhes from '~/pages/Operacoes/OperacaoDetalhes';
 
 const Routes = (userLogged = false) => createAppContainer(
   createSwitchNavigator(
@@ -21,6 +22,12 @@ const Routes = (userLogged = false) => createAppContainer(
       },
       CadastroUsuario: {
         screen: CadastroUsuario,
+      },
+      CadastroOperacao: {
+        screen: CadastroOperacao,
+      },
+      OperacaoDetalhes: {
+        screen: OperacaoDetalhes,
       },
       User: createBottomTabNavigator(
         {
