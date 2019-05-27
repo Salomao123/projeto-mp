@@ -59,7 +59,7 @@ export default class CadastroOperacao extends Component {
 
     return (
       <View style={styles.container}>
-        <Header title="Cadastro Operações" />
+        <Header title="Cadastro Operações" goBack="User" />
 
         <View style={styles.content}>
           <View style={styles.form}>
@@ -68,6 +68,7 @@ export default class CadastroOperacao extends Component {
               style={styles.input}
               autoCapitalize="none"
               autoCorrect={false}
+              autoFocus
               placeholder="Título"
               underlineColorAndroid="transparent"
               value={title}

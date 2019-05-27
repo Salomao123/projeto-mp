@@ -27,10 +27,21 @@ const styles = StyleSheet.create({
   },
   menu: {
     flexDirection: 'row',
+    alignItems: 'center',
     margin: metrics.baseMargin / 2,
   },
   eye: {
     flexDirection: 'row',
+  },
+
+  containerTitle: {
+    alignItems: 'center',
+  },
+
+  textPublicar: {
+    fontWeight: '400',
+    color: colors.primary,
+    fontSize: 16,
   },
 });
 

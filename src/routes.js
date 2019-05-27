@@ -13,6 +13,9 @@ import Projetos from '~/pages/Projetos';
 import CadastroUsuario from '~/pages/Usuario/Cadastro';
 import CadastroOperacao from '~/pages/Operacoes/CadastroOperacao';
 import OperacaoDetalhes from '~/pages/Operacoes/OperacaoDetalhes';
+import OperacaoFeedResposta from '~/pages/Operacoes/OperacaoFeedResposta';
+import OperacaoCriarPost from '~/pages/Operacoes/OperacaoFeedResposta/OperacaoCriarPost';
+import OperacaoFeedUsers from '~/pages/Operacoes/OperacaoFeedResposta/OperacaoFeedUsers';
 
 const Routes = (userLogged = false) => createAppContainer(
   createSwitchNavigator(
@@ -42,6 +45,31 @@ const Routes = (userLogged = false) => createAppContainer(
             navigationOptions: {
               title: 'Projetos Internos',
             },
+          },
+        },
+
+        {
+          tabBarOptions: {
+            showIcon: true,
+            showLabel: true,
+            activeTintColor: colors.white,
+            inactiveTintColor: colors.whiteTransparent,
+            style: {
+              backgroundColor: colors.secundary,
+            },
+          },
+        },
+      ),
+      FeedOperacao: createBottomTabNavigator(
+        {
+          OperacaoFeedResposta: {
+            screen: OperacaoFeedResposta,
+          },
+          OperacaoCriarPost: {
+            screen: OperacaoCriarPost,
+          },
+          OperacaoFeedUsers: {
+            screen: OperacaoFeedUsers,
           },
         },
         {

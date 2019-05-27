@@ -20,6 +20,10 @@ class Header extends Component {
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
     }).isRequired,
+    adicionar: PropTypes.bool,
+    viewers: PropTypes.number,
+    goBack: PropTypes.string,
+    subTitle: PropTypes.string,
   };
 
   signOut = async () => {
@@ -30,21 +34,34 @@ class Header extends Component {
     navigation.navigate('Welcome');
   };
 
+  goBack = (goBack, navigation) => {
+    navigation.navigate(`${goBack}`);
+  };
+
   render() {
     const {
-      title, adicionar, navigation, viewers,
+      title, adicionar, navigation, viewers, goBack, subTitle, publicar,
     } = this.props;
+
+    console.tron.log({ navigation });
 
     return (
       <View style={styles.container}>
         <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
 
         <View style={styles.left}>
-          <TouchableOpacity onPress={() => alert('ainda nao implementado!')}>
-            <Icon name="bars" size={20} style={styles.icon} />
-          </TouchableOpacity>
+          {goBack ? (
+            <TouchableOpacity onPress={() => this.goBack(goBack, navigation)}>
+              <Icon name="arrow-left" size={20} style={styles.icon} />
+            </TouchableOpacity>
+          ) : (
+            <Text style={styles.title}>GO!</Text>
+          )}
         </View>
-        <Text style={styles.title}>{title}</Text>
+        <View style={styles.containerTitle}>
+          <Text style={styles.title}>{title}</Text>
+          {subTitle && <Text>{subTitle}</Text>}
+        </View>
 
         <View style={styles.menu}>
           {adicionar && (
@@ -59,6 +76,12 @@ class Header extends Component {
               <Icon name="eye" size={20} style={styles.icon} />
             </TouchableOpacity>
           )}
+          {publicar && (
+            <TouchableOpacity onPress={() => alert('ainda nao implementado!')}>
+              <Text style={styles.textPublicar}>publicar</Text>
+            </TouchableOpacity>
+          )}
+
           <TouchableOpacity onPress={this.signOut}>
             <Icon name="sign-out" size={20} style={styles.icon} />
           </TouchableOpacity>
