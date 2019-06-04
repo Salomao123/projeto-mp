@@ -8,7 +8,7 @@ import styles from './styles';
 const OperacaoItem = ({ operacao, navigation }) => (
   <TouchableOpacity
     style={styles.container}
-    onPress={() => navigation.navigate('OperacaoDetalhes', { operacao })}
+    onPress={() => navigation.navigate('Mandato', { operacao })}
   >
     <Text style={styles.title}>{operacao.title}</Text>
 

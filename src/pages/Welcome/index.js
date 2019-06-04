@@ -73,8 +73,8 @@ export default class Welcome extends Component {
       <View style={styles.container}>
         <StatusBar barStyle="light-content" backgroundColor={colors.secundary} />
 
-        <Text style={styles.title}>Bem-Vindo ao GOI</Text>
-        <Text style={styles.subTitle}>Gerenciamento de Operações Internas</Text>
+        <Text style={styles.title}>GAECO</Text>
+        <Text style={styles.subTitle}>Grupo de Atuação Especial no Combate ao Crime Organizado</Text>
         <Text style={styles.text}>
           Para continuar precisamos que você informa seu usuário e senha.
         </Text>

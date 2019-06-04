@@ -9,6 +9,7 @@ import { colors } from '~/styles';
 // screen
 import Welcome from '~/pages/Welcome';
 import Operacoes from '~/pages/Operacoes';
+import Mandato from '~/pages/Mandato';
 import Projetos from '~/pages/Projetos';
 import CadastroUsuario from '~/pages/Usuario/Cadastro';
 import CadastroOperacao from '~/pages/Operacoes/CadastroOperacao';
@@ -31,6 +32,9 @@ const Routes = (userLogged = false) => createAppContainer(
       },
       OperacaoDetalhes: {
         screen: OperacaoDetalhes,
+      },
+      Mandato: {
+        screen: Mandato,
       },
       User: createBottomTabNavigator(
         {
