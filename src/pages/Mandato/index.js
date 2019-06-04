@@ -10,13 +10,12 @@ const Mandato = (operacao) => {
   console.log({operacao})
   return (
   <View style={styles.container}>
-    <Header title="Mandatos" goBack='User'/>
+    <Header title="Mandatos" adicionar='mandado' goBack='User'/>
 
       <TouchableOpacity onPress={() => alert('ainda nao implementado!')} style={styles.mandatoBox}>
-        <Text>Nome do Mandato</Text>
-        <Text>Descricao do mandato</Text>
+        <Text style={styles.textDefault}>Mandado de busca e apreensao N˚ 700000949357</Text>
+        <Text style={styles.textDefault}>Portanova e Advogados Associados (CNPJ 04.578.683/0001-10) </Text>
       </TouchableOpacity>
-
   </View>
 )};
 

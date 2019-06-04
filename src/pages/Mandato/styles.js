@@ -9,13 +9,17 @@ const styles = StyleSheet.create({
   },
   mandatoBox: {
     borderWidth: 0.5,
-    borderColor: colors.darker,
+    borderColor: colors.regular,
     paddingHorizontal: metrics.basePadding,
     paddingVertical: metrics.basePadding,
     borderRadius: metrics.baseRadius,
     marginHorizontal: metrics.baseMargin,
     marginVertical: metrics.baseMargin,
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
+  },
+  textDefault: {
+    fontSize: 14,
+    paddingVertical: metrics.basePadding / 4,
   },
 });
 
