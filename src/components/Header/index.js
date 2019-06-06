@@ -20,7 +20,7 @@ class Header extends Component {
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
     }).isRequired,
-    adicionar: PropTypes.bool,
+    adicionar: PropTypes.string,
     viewers: PropTypes.number,
     goBack: PropTypes.string,
     subTitle: PropTypes.string,
@@ -64,8 +64,14 @@ class Header extends Component {
         </View>
 
         <View style={styles.menu}>
-          {adicionar && (
+          {(adicionar === 'operacoes') && (
             <TouchableOpacity onPress={() => navigation.navigate('CadastroOperacao')}>
+              <Icon name="plus" size={20} style={styles.icon} />
+            </TouchableOpacity>
+          )}
+
+          {(adicionar === 'mandado') && (
+            <TouchableOpacity onPress={() => navigation.navigate('MandadoCadastro')}>
               <Icon name="plus" size={20} style={styles.icon} />
             </TouchableOpacity>
           )}

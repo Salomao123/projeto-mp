@@ -73,7 +73,7 @@ export default class Repositories extends Component {
     const { data, loading } = this.state;
     return (
       <View style={styles.container}>
-        <Header title="Operações" adicionar navigation={this.props.navigation} drawer />
+        <Header title="Operações" adicionar='operacoes' navigation={this.props.navigation} drawer />
         {loading ? <ActivityIndicator size={24} /> : this.renderList(data)}
       </View>
     );

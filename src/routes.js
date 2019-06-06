@@ -17,6 +17,7 @@ import OperacaoDetalhes from '~/pages/Operacoes/OperacaoDetalhes';
 import OperacaoFeedResposta from '~/pages/Operacoes/OperacaoFeedResposta';
 import OperacaoCriarPost from '~/pages/Operacoes/OperacaoFeedResposta/OperacaoCriarPost';
 import OperacaoFeedUsers from '~/pages/Operacoes/OperacaoFeedResposta/OperacaoFeedUsers';
+import MandadoCadastro from '~/pages/Mandato/MandadoCadastro';
 
 const Routes = (userLogged = false) => createAppContainer(
   createSwitchNavigator(
@@ -35,6 +36,9 @@ const Routes = (userLogged = false) => createAppContainer(
       },
       Mandato: {
         screen: Mandato,
+      },
+      MandadoCadastro: {
+        screen: MandadoCadastro,
       },
       User: createBottomTabNavigator(
         {
