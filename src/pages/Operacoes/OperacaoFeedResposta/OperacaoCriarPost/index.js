@@ -12,7 +12,7 @@ const TabIcon = ({ tintColor }) => <Icon name="plus" size={20} color={tintColor}
 export default class OperacaoCriarPost extends Component {
   static navigationOptions = {
     tabBarIcon: TabIcon,
-    title: 'Criar',
+    title: 'Criar Post',
   };
 
   render() {
@@ -22,7 +22,7 @@ export default class OperacaoCriarPost extends Component {
 
         <View style={styles.container}>
           <View style={styles.thumb_post}>
-            <TouchableOpacity onPress={() => alert('ainda nao implementado!')}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Camera')}>
               <Icon name="image" size={50} color={colors.light} />
             </TouchableOpacity>
             <TextInput

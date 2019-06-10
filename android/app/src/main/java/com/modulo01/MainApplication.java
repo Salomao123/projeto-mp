@@ -3,6 +3,7 @@ package com.modulo01;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import org.reactnative.camera.RNCameraPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -24,7 +25,8 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(new MainReactPackage(), new VectorIconsPackage(), new AsyncStoragePackage(),
+      return Arrays.<ReactPackage>asList(new MainReactPackage(),
+            new RNCameraPackage(), new VectorIconsPackage(), new AsyncStoragePackage(),
           new RNGestureHandlerPackage());
     }
 

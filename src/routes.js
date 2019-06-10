@@ -20,7 +20,8 @@ import OperacaoCriarPost from '~/pages/Operacoes/OperacaoFeedResposta/OperacaoCr
 import OperacaoFeedUsers from '~/pages/Operacoes/OperacaoFeedResposta/OperacaoFeedUsers';
 import MandadoCadastro from '~/pages/Mandato/MandadoCadastro';
 
-// component
+// components
+import Camera from '~/components/Camera';
 
 const Routes = (userLogged = false) => createAppContainer(
   createSwitchNavigator(
@@ -95,6 +96,10 @@ const Routes = (userLogged = false) => createAppContainer(
           },
         },
       ),
+
+      Camera: {
+        screen: Camera,
+      },
     },
     {
       initialRouteName: userLogged ? 'User' : 'Welcome',
