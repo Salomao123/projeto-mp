@@ -18,7 +18,7 @@ export default class OperacaoCriarPost extends Component {
   render() {
     return (
       <View>
-        <Header title="Criar Post" goBack="User" publicar />
+        <Header title="Criar Post" goBack="Mandato" publicar />
 
         <View style={styles.container}>
           <View style={styles.thumb_post}>

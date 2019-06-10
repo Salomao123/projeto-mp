@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import api from '~/services/api';
 
-import {
-  View, Text, TouchableOpacity, ScrollView, FlatList,
-} from 'react-native';
+import { View, Text, FlatList } from 'react-native';
+
+import PropTypes from 'prop-types';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -16,6 +16,16 @@ import MandadoItem from './MandadoItem';
 class Mandato extends Component {
   state = {
     data: [],
+  };
+
+  static propTypes = {
+    navigation: PropTypes.shape({
+      state: PropTypes.shape({
+        operacao: PropTypes.shape({
+          title: PropTypes.string,
+        }),
+      }),
+    }).isRequired,
   };
 
   componentDidMount() {
@@ -33,14 +43,24 @@ class Mandato extends Component {
     this.setState({ data: response.data });
   };
 
-  renderItem = ({ item }) => <MandadoItem item={item} />;
+  renderItem = ({ item }) => <MandadoItem navigation={this.props.navigation} item={item} />;
 
   render() {
     const { data } = this.state;
 
+    const {
+      navigation: {
+        state: {
+          params: {
+            operacao: { title },
+          },
+        },
+      },
+    } = this.props;
+
     return (
       <View style={styles.container}>
-        <Header title="Mandatos" adicionar="mandado" goBack="User" />
+        <Header title="Mandatos" subTitle={title} adicionar="mandado" goBack="User" />
 
         {data.length ? (
           <FlatList

@@ -41,7 +41,7 @@ const OperacaoFeedResposta = ({ navigation }) => {
 
   return (
     <View>
-      <Header title="Feed Resposta" subTitle="Nome Operação" goBack="OperacaoDetalhes" />
+      <Header title="Feed Resposta" subTitle="Nome Operação" goBack="Mandato" />
 
       <FlatList
         data={feedItems}

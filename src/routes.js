@@ -2,6 +2,7 @@ import {
   createAppContainer,
   createSwitchNavigator,
   createBottomTabNavigator,
+  createStackNavigator,
 } from 'react-navigation';
 
 import { colors } from '~/styles';
@@ -18,6 +19,8 @@ import OperacaoFeedResposta from '~/pages/Operacoes/OperacaoFeedResposta';
 import OperacaoCriarPost from '~/pages/Operacoes/OperacaoFeedResposta/OperacaoCriarPost';
 import OperacaoFeedUsers from '~/pages/Operacoes/OperacaoFeedResposta/OperacaoFeedUsers';
 import MandadoCadastro from '~/pages/Mandato/MandadoCadastro';
+
+// component
 
 const Routes = (userLogged = false) => createAppContainer(
   createSwitchNavigator(
