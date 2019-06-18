@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity, Image } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Header from '~/components/Header';
@@ -10,10 +10,31 @@ import { colors } from '~/styles';
 const TabIcon = ({ tintColor }) => <Icon name="plus" size={20} color={tintColor} />;
 
 export default class OperacaoCriarPost extends Component {
+  
+  state = { 
+    region: null,
+
+   };
+
   static navigationOptions = {
     tabBarIcon: TabIcon,
     title: 'Criar Post',
   };
+
+  getLocation = async() => {
+    await navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        console.tron.log({latitude, longitude})
+      }, //sucesso
+      () => {}, //erro
+      {
+        timeout: 2000,
+        enableHighAccuracy: true,
+        maximumAge: 1000
+      }
+    )
+
+  }
 
   render() {
     return (
@@ -38,7 +59,7 @@ export default class OperacaoCriarPost extends Component {
           <View style={styles.thumb_post}>
             <TouchableOpacity
               style={styles.location}
-              onPress={() => alert('ainda nao implementado!')}
+              onPress={() => this.getLocation()}
             >
               <Icon name="map-marker" size={30} color={colors.danger} />
               <Text style={styles.text}>Adicionar localização atual</Text>

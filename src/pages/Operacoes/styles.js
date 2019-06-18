@@ -6,6 +6,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.lighter,
   },
+  content: {
+    alignItems: 'center',
+    marginVertical: metrics.baseMargin,
+  },
   loading: {
     marginTop: metrics.baseMargin * 2,
   },

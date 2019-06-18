@@ -20,6 +20,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: colors.darker,
   },
+  subtitle: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: colors.secundary,
+  },
   icon: {
     fontSize: 20,
     color: colors.darker,

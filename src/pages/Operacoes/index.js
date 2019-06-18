@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { View, FlatList, ActivityIndicator } from 'react-native';
+import { View, FlatList, ActivityIndicator, Text } from 'react-native';
 
 import Header from '~/components/Header';
 
@@ -31,6 +31,7 @@ export default class Repositories extends Component {
     data: [],
     loading: true,
     refreshing: false,
+    error: false,
   };
 
   componentDidMount() {
@@ -70,10 +71,11 @@ export default class Repositories extends Component {
   };
 
   render() {
-    const { data, loading } = this.state;
+    const { data, loading, error } = this.state;
     return (
       <View style={styles.container}>
         <Header title="Operações" adicionar='operacoes' navigation={this.props.navigation} drawer />
+
         {loading ? <ActivityIndicator size={24} /> : this.renderList(data)}
       </View>
     );

@@ -60,7 +60,7 @@ class Header extends Component {
         </View>
         <View style={styles.containerTitle}>
           <Text style={styles.title}>{title}</Text>
-          {subTitle && <Text>{subTitle}</Text>}
+          {subTitle && <Text style={styles.subtitle}>{subTitle}</Text>}
         </View>
 
         <View style={styles.menu}>
